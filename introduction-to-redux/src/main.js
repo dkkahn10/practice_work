@@ -6,3 +6,6 @@ console.log(store.getState());
 
 store.dispatch({ type: 'ADD_ONE' });
 console.log(store.getState());
+
+store.dispatch({ type: 'RESET_TO_ZERO' });
+console.log(store.getState());
