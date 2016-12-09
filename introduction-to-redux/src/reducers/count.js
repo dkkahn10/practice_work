@@ -8,6 +8,8 @@ const count = (state = initialState, action) => {
       return 0;
     case 'INCREASE_BY':
       return state + action.numberToAdd;
+    case 'SUBTRACT_BY':
+      return state - action.numberToSubtract;
     default:
       return state;
   }
