@@ -1,14 +1,15 @@
-// main.js
-let getDataAsynchronously = (callback)  => {
-  setTimeout(() => {
-    let data = 1;
-    if (typeof data === 'number' && !isNaN(data)) {
-      callback(data, null);
-    } else {
-      let error = new Error('data is not a number');
-      callback(null, error);
-    }
-  }, 100);
+let getDataAsynchronously = ()  => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      let data = 1;
+      if (typeof data === 'number' && !isNaN(data)) {
+        resolve(data);
+      } else {
+        let error = new Error('data is not a number');
+        reject(error);
+      }
+    }, 100);
+  });
 };
 
 let divideFiveByNumber = (number, callback)  => {
@@ -24,19 +25,5 @@ let divideFiveByNumber = (number, callback)  => {
 let reportResult = result => console.log('Result:', result);
 let reportError = error => console.error('Error:', error.message);
 
-getDataAsynchronously((result, error) => {
-  if (error) {
-    reportError(error);
-    return;
-  }
-
-  divideFiveByNumber(result, (result, error) => {
-    if (error) {
-      reportError(error);
-      return;
-    }
-
-    reportResult(result);
-  });
-});
+let promiseOne = getDataAsynchronously();
 console.log('Run before asynchronous function finishes executing');
