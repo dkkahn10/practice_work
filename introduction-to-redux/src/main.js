@@ -9,3 +9,6 @@ console.log(store.getState());
 
 store.dispatch({ type: 'RESET_TO_ZERO' });
 console.log(store.getState());
+
+store.dispatch({ type: 'INCREASE_BY', numberToAdd: 2 });
+console.log(store.getState());

@@ -6,6 +6,8 @@ const count = (state = initialState, action) => {
       return state + 1;
     case 'RESET_TO_ZERO':
       return 0;
+    case 'INCREASE_BY':
+      return state + action.numberToAdd;
     default:
       return state;
   }
