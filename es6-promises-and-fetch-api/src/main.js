@@ -1,14 +1,14 @@
 let getDataAsynchronously = ()  => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      let data = 1;
+      let data = 'hi';
       if (typeof data === 'number' && !isNaN(data)) {
         resolve(data);
       } else {
         let error = new Error('data is not a number');
         reject(error);
       }
-    }, 100);
+    }, 1000);
   });
 };
 
