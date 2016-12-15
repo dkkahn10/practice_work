@@ -26,5 +26,6 @@ let reportResult = result => console.log('Result:', result);
 let reportError = error => console.error('Error:', error.message);
 
 let promiseOne = getDataAsynchronously();
-let promiseTwo = promiseOne.then(promiseOneValue => console.log(promiseOneValue));
+let promiseTwo = promiseOne.then(promiseOneValue => promiseOneValue + 1);
+let promiseThree = promiseTwo.then(promiseTwoValue => console.log(promiseTwoValue));
 console.log('Run before asynchronous function finishes executing');
