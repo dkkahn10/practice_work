@@ -12,7 +12,7 @@ let getDataAsynchronously = ()  => {
   });
 };
 
-let divideFiveByNumber = (number, callback)  => {
+let divideFiveByNumber = (number)  => {
   if (number !== 0) {
     let result =  5 / number;
     return result;
@@ -25,8 +25,7 @@ let divideFiveByNumber = (number, callback)  => {
 let reportResult = result => console.log('Result:', result);
 let reportError = error => console.error('Error:', error.message);
 
-let promiseOne = getDataAsynchronously();
-let promiseTwo = promiseOne.then(divideFiveByNumber);
-let promiseThree = promiseTwo.then(reportResult);
-promiseThree.catch(reportError);
-console.log('Run before asynchronous function finishes executing');
+getDataAsynchronously()
+  .then(divideFiveByNumber)
+  .then(reportResult)
+  .catch(reportError)
