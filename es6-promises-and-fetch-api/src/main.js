@@ -1,7 +1,7 @@
 let getDataAsynchronously = ()  => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      let data = 'hi';
+      let data = 1;
       if (typeof data === 'number' && !isNaN(data)) {
         resolve(data);
       } else {
@@ -26,6 +26,9 @@ let reportResult = result => console.log('Result:', result);
 let reportError = error => console.error('Error:', error.message);
 
 let promiseOne = getDataAsynchronously();
-let promiseTwo = promiseOne.then(promiseOneValue => promiseOneValue + 1);
+let promiseTwo = promiseOne.then(promiseOneValue => {
+  throw(new Error('error from onFulfilled callback'))
+});
 let promiseThree = promiseTwo.then(promiseTwoValue => console.log(promiseTwoValue));
 promiseThree.catch(promiseThreeValue => console.log(promiseThreeValue.message));
+console.log('Run before asynchronous function finishes executing');
