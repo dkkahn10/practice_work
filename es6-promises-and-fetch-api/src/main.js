@@ -28,4 +28,4 @@ let reportError = error => console.error('Error:', error.message);
 let promiseOne = getDataAsynchronously();
 let promiseTwo = promiseOne.then(promiseOneValue => promiseOneValue + 1);
 let promiseThree = promiseTwo.then(promiseTwoValue => console.log(promiseTwoValue));
-console.log('Run before asynchronous function finishes executing');
+promiseThree.catch(promiseThreeValue => console.log(promiseThreeValue.message));
