@@ -7,5 +7,7 @@ var Home = React.createClass({
 ReactDOM.render((
   <Router>
     <Route path='/' component={Home} />
+    <Route path='/users' component={Users} />
+    <Route path='/widgets' component={Widgets} />
   </Router>
 ), document.getElementById('root'));
