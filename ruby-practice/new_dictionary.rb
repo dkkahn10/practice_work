@@ -1,5 +1,5 @@
 class Annkissam
-  attr_reader :permutations, :valid_sentences
+  attr_reader :permutations
 
   DICTIONARY = {
     nouns: ["abcd", "c", "def", "h", "ij", "cde"],
@@ -10,7 +10,6 @@ class Annkissam
   def initialize(input)
     @input = input
     @permutations = []
-    @valid_sentences = []
   end
 
   def validate
