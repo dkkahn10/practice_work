@@ -1,5 +1,5 @@
 class Annkissam
-  attr_reader :permutations
+  attr_reader :permutations, :valid_sentences
 
   DICTIONARY = {
     nouns: ["abcd", "c", "def", "h", "ij", "cde"],
@@ -13,7 +13,7 @@ class Annkissam
   end
 
   def validate
-    self.permutation_creator
+    permutation_creator
     valid_sentences = []
     @permutations.each do |permutation|
 
@@ -82,6 +82,7 @@ class Annkissam
     permutation_helper(string, buff, i+1, j+2, n)
   end
 end
+
 
 puts
 puts "Testing 'abcdefg'"
