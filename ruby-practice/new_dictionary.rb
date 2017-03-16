@@ -15,8 +15,8 @@ class Annkissam
   def validate
     permutation_creator
     valid_sentences = []
-    @permutations.each do |permutation|
 
+    @permutations.each do |permutation|
       tokens = permutation.split(' ')
       combos = { verbs: 0, nouns: 0, articles: 0 }
       all_words = (DICTIONARY[:verbs] + DICTIONARY[:nouns] + DICTIONARY[:articles]).flatten
