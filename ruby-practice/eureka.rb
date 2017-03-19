@@ -7,6 +7,22 @@
 # split numbers into separate mini-array
 # iterate over each number raising to the power of each individual index plus one
 
+# def sum_dig_pow(a, b)
+#   array = (a..b).to_a
+#   eureka = []
+#   array.each do |n|
+#     digit_arr = n.to_s.chars.map(&:to_i)
+#     sum = 0
+#     digit_arr.each_with_index do |digit, i|
+#       sum += digit**(i + 1)
+#     end
+#     if sum == n
+#       eureka << n
+#     end
+#   end
+#   return eureka
+# end
+
 def sum_dig_pow(a, b) #1 10
   new_array = (a..b).to_a
   special_array = []
